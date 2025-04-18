@@ -39,3 +39,10 @@ qs.save({
 const previousState = qs.load();
 console.log(previousState?.theme); // 'dark'
 
+useEffect(() => {
+  const interval = setInterval(() => {
+    quickSave.save(currentSessionData);
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, [currentSessionData]);
