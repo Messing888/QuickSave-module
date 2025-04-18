@@ -60,3 +60,13 @@ fallback | Object | Default values if no state is found
 
 # Run unit tests
 npm run test
+
+quicksave-module/
+├── src/
+│   └── index.js
+├── tests/
+│   └── quicksave.test.js
+├── dist/
+│   └── quicksave.min.js
+├── README.md
+└── package.json
