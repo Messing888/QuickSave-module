@@ -46,3 +46,17 @@ useEffect(() => {
 
   return () => clearInterval(interval);
 }, [currentSessionData]);
+
+const qs = new QuickSave('secure-settings', {
+  encrypted: true,
+  secret: 'myStrongEncryptionKey',
+});
+
+Option | Type | Description
+storage | String | "local" (default) or "session"
+encrypted | Boolean | Enable local AES encryption
+secret | String | Secret key for encryption (if enabled)
+fallback | Object | Default values if no state is found
+
+# Run unit tests
+npm run test
