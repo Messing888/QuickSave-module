@@ -20,3 +20,22 @@ The **QuickSave Module** is a lightweight utility built to instantly store and r
 ---
 
 > The QuickSave Module is fully modular and can be extended or replaced depending on your application's scale or security requirements.
+
+<script src="quicksave.min.js"></script>
+
+import QuickSave from '@rg45/quicksave';
+
+// Initialize QuickSave with a key
+const qs = new QuickSave('user-dashboard');
+
+// Save current state
+qs.save({
+  selectedPair: 'BTC/USDT',
+  theme: 'dark',
+  orderDraft: { type: 'limit', amount: 0.5, price: 30000 },
+});
+
+// Restore state
+const previousState = qs.load();
+console.log(previousState?.theme); // 'dark'
+
